@@ -1,6 +1,7 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkingBoy;
+import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,11 +52,14 @@ class ParkingBoyFacts {
     @Test
     void should_return_null_when_fetching_given_wrong_ticket() {
         //given
-        String ticketId = "T002";
+        String ticketId = "T001";
+        String carId = "C001";
+
+        String wrongTicketId = "AS11";
         ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
-        String result = parkingBoy.fetching(ticketId);
+        String result = parkingBoy.fetching(wrongTicketId);
 
         //then
         assertEquals(null,result);
