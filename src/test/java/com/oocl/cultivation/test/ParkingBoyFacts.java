@@ -2,9 +2,11 @@ package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkingBoy;
 import com.oocl.cultivation.Ticket;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -12,6 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class ParkingBoyFacts {
 
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    @BeforeEach
+    void setUp() {
+        System.setOut(new PrintStream(outContent));
+    }
 
     @Test
     void should_return_ticket_when_parking_given_car() {
@@ -132,7 +139,7 @@ class ParkingBoyFacts {
         String result = parkingBoy.fetching(wrongTicket);
 
         //then
-        assertEquals(true,systemOut().endsWith("Unrecognized parking ticket.\n"));
+        assertEquals("Unrecognized parking ticket.",systemOut());
 
     }
 

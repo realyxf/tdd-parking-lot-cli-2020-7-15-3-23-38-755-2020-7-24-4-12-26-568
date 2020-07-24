@@ -17,10 +17,14 @@ public class ParkingBoy {
     }
 
     public String fetching(Ticket ticket) {
+
         if (ticket.isUsed() == true) {
+            System.out.print("Unrecognized parking ticket.");
             return null;
         }
+
         if(!parkLotSet.contains(ticket.getCarId())){
+            System.out.print("Unrecognized parking ticket.");
             return null;
         }
 
