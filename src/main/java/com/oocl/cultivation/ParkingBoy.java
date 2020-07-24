@@ -13,6 +13,10 @@ public class ParkingBoy {
             parkLotSet.add(ticket.getCarId());
             return ticket;
         }
+        if(parkLotSet.size() >= 10){
+            System.out.print("Not enough position.");
+            return null;
+        }
         return null;
     }
 
