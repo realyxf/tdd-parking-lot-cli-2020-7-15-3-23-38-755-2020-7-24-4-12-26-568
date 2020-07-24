@@ -20,6 +20,10 @@ public class ParkingBoy {
         if (ticket.isUsed() == true) {
             return null;
         }
+        if(!parkLotSet.contains(ticket.getCarId())){
+            return null;
+        }
+
         ticket.setUsed(true);
         return ticket.getCarId();
     }

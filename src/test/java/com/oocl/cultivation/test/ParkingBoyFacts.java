@@ -50,18 +50,19 @@ class ParkingBoyFacts {
         assertEquals(carId,result);
     }
 
-//    @Test
-//    void should_return_null_when_fetching_given_wrong_ticket() {
-//        //given
-//        ParkingBoy parkingBoy = new ParkingBoy();
-//        Ticket Ticket = new Ticket();
-//
-//        //when
-//        String result = parkingBoy.fetching(wrongTicket);
-//
-//        //then
-//        assertEquals(null,result);
-//    }
+    @Test
+    void should_return_null_when_fetching_given_wrong_ticket() {
+        //given
+        String carId = "C001";
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Ticket ticket = parkingBoy.parking(carId);
+        Ticket wrongTicket = new Ticket("T123","C123",false);
+        //when
+        String result = parkingBoy.fetching(wrongTicket);
+
+        //then
+        assertEquals(null,result);
+    }
 
     @Test
     void should_return_null_when_fetching_given_used_ticket() {
@@ -110,4 +111,5 @@ class ParkingBoyFacts {
         //then
         assertEquals(null,result);
     }
+    //assertThat(systemOut().endsWith("I am Tom. I know Jerry has joined Class 2.\n")).isTrue();
 }
