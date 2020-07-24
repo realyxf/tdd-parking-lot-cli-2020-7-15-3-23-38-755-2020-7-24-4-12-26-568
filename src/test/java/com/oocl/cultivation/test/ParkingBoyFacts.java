@@ -4,10 +4,15 @@ import com.oocl.cultivation.ParkingBoy;
 import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ParkingBoyFacts {
+
+    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
     @Test
     void should_return_ticket_when_parking_given_car() {
         //given
@@ -111,5 +116,24 @@ class ParkingBoyFacts {
         //then
         assertEquals(null,result);
     }
-    //assertThat(systemOut().endsWith("I am Tom. I know Jerry has joined Class 2.\n")).isTrue();
+
+    private String systemOut() {
+        return outContent.toString();
+    }
+
+    @Test
+    void should_return_unrecognized_parking_ticket_when_parking_given_wrong_ticket() {
+        //given
+        String carId = "C001";
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Ticket ticket = parkingBoy.parking(carId);
+        Ticket wrongTicket = new Ticket("T123","C123",false);
+        //when
+        String result = parkingBoy.fetching(wrongTicket);
+
+        //then
+        assertEquals(true,systemOut().endsWith("Unrecognized parking ticket.\n"));
+
+    }
+
 }
