@@ -1,24 +1,24 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkingBoy;
-import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ParkingBoyFacts {
     @Test
     void should_return_ticket_when_parking_given_car() {
         //given
-        String ticketId = "T001";
         String carId = "C001";
+
         ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
         String result = parkingBoy.parking(carId);
 
         //then
-        assertEquals(ticketId,result);
+        assertNotNull(result);
     }
 
     @Test
