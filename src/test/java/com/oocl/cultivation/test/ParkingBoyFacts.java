@@ -64,7 +64,7 @@ class ParkingBoyFacts {
 //    }
 
     @Test
-    void should_return_null_when_fetching_used_ticket() {
+    void should_return_null_when_fetching_given_used_ticket() {
         //given
         String carId = "C001";
         ParkingBoy parkingBoy = new ParkingBoy();
@@ -73,6 +73,39 @@ class ParkingBoyFacts {
         //when
         String result = parkingBoy.fetching(ticket);
         result = parkingBoy.fetching(ticket);
+
+        //then
+        assertEquals(null,result);
+    }
+
+    @Test
+    void should_return_null_when_parking_given_ticket_with_more_than_capacity() {
+        //given
+        String carId1 = "C001";
+        String carId2 = "C002";
+        String carId3 = "C003";
+        String carId4 = "C004";
+        String carId5 = "C005";
+        String carId6 = "C006";
+        String carId7 = "C007";
+        String carId8 = "C008";
+        String carId9 = "C009";
+        String carId10 = "C010";
+        String carId11 = "C011";
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        Ticket result = parkingBoy.parking(carId1);
+        result = parkingBoy.parking(carId2);
+        result = parkingBoy.parking(carId3);
+        result = parkingBoy.parking(carId4);
+        result = parkingBoy.parking(carId5);
+        result = parkingBoy.parking(carId6);
+        result = parkingBoy.parking(carId7);
+        result = parkingBoy.parking(carId8);
+        result = parkingBoy.parking(carId9);
+        result = parkingBoy.parking(carId10);
+        result = parkingBoy.parking(carId11);
 
         //then
         assertEquals(null,result);
