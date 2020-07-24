@@ -21,9 +21,6 @@ public class Ticket {
         isUsed = used;
     }
 
-    public Ticket() {
-    }
-
     public Ticket(String ticketId, String carId, boolean isUsed) {
         this.ticketId = ticketId;
         this.carId = carId;

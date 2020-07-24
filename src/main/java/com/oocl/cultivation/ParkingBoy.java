@@ -17,6 +17,10 @@ public class ParkingBoy {
     }
 
     public String fetching(Ticket ticket) {
+        if(ticket == null){
+            System.out.println("Please provide your parking ticket.");
+            return null;
+        }
 
         if (ticket.isUsed() == true) {
             System.out.print("Unrecognized parking ticket.");
@@ -30,5 +34,10 @@ public class ParkingBoy {
 
         ticket.setUsed(true);
         return ticket.getCarId();
+    }
+
+    public String fetching() {
+        System.out.print("Please provide your parking ticket.");
+        return null;
     }
 }

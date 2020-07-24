@@ -147,9 +147,8 @@ class ParkingBoyFacts {
         //given
         String carId = "C001";
         ParkingBoy parkingBoy = new ParkingBoy();
-        Ticket ticket = new Ticket();
         //when
-        parkingBoy.fetching(ticket);
+        parkingBoy.fetching();
 
         //then
         assertEquals("Please provide your parking ticket.",systemOut());
