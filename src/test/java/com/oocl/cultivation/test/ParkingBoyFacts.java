@@ -11,8 +11,6 @@ class ParkingBoyFacts {
         //given
         String ticketId = "T001";
         String carId = "C001";
-//        Ticket ticket = new Ticket(ticketId);
-//        Car car = new Car(carId);
         ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
@@ -20,5 +18,19 @@ class ParkingBoyFacts {
 
         //then
         assertEquals(ticketId,result);
+    }
+
+    @Test
+    void should_return_car_when_fetching_given_ticket() {
+        //given
+        String ticketId = "T001";
+        String carId = "C001";
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.fetching(ticketId);
+
+        //then
+        assertEquals(carId,result);
     }
 }
