@@ -7,7 +7,7 @@ public class ParkingBoy {
     }
 
     public String fetching(String ticketId) {
-        if(ticketId == "C001"){
+        if(ticketId == "T001"){
             return "C001";
         }
         return null;
