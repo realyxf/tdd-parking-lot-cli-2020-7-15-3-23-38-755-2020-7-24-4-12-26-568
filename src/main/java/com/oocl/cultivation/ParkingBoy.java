@@ -1,10 +1,19 @@
 package com.oocl.cultivation;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ParkingBoy {
+    Set<String> parkLotSet = new HashSet<>();
+
     public Ticket parking(String carId) {
-        int ticketIdNum = (int) (Math.random() * 900) + 100;
-        Ticket ticket = new Ticket(String.format("T%s", ticketIdNum), carId, false);
-        return ticket;
+//        if (parkLotSet.size() < 10) {
+//            int ticketIdNum = (int) (Math.random() * 900) + 100;
+//            Ticket ticket = new Ticket(String.format("T%s", ticketIdNum), carId, false);
+//            parkLotSet.add(ticket.getCarId());
+//            return ticket;
+//        }
+        return null;
     }
 
     public String fetching(Ticket ticket) {
