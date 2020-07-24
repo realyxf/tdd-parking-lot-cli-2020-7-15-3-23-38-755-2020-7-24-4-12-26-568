@@ -6,6 +6,6 @@ public class ParkingBoy {
     }
 
     public String fetching(String ticketId) {
-        return "";
+        return "C001";
     }
 }
