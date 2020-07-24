@@ -154,4 +154,36 @@ class ParkingBoyFacts {
         assertEquals("Please provide your parking ticket.",systemOut());
     }
 
+    @Test
+    void should_return_not_enough_position_when_parking_given_car() {
+        //given
+        String carId1 = "C001";
+        String carId2 = "C002";
+        String carId3 = "C003";
+        String carId4 = "C004";
+        String carId5 = "C005";
+        String carId6 = "C006";
+        String carId7 = "C007";
+        String carId8 = "C008";
+        String carId9 = "C009";
+        String carId10 = "C010";
+        String carId11 = "C011";
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        parkingBoy.parking(carId1);
+        parkingBoy.parking(carId2);
+        parkingBoy.parking(carId3);
+        parkingBoy.parking(carId4);
+        parkingBoy.parking(carId5);
+        parkingBoy.parking(carId6);
+        parkingBoy.parking(carId7);
+        parkingBoy.parking(carId8);
+        parkingBoy.parking(carId9);
+        parkingBoy.parking(carId10);
+        parkingBoy.parking(carId11);
+
+        //then
+        assertEquals("Not enough position.",systemOut());
+    }
 }
