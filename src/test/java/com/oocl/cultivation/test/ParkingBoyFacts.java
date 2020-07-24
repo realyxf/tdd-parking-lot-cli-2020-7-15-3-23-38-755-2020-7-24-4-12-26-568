@@ -186,4 +186,9 @@ class ParkingBoyFacts {
         //then
         assertEquals("Not enough position.",systemOut());
     }
+
+    void return_second_parklog_when_first_parkinglog_enough_given_more_than_capacity_car(){
+
+    }
+
 }
