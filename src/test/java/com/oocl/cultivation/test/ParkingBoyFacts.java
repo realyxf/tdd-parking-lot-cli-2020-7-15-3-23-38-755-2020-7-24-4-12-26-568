@@ -47,4 +47,17 @@ class ParkingBoyFacts {
         //then
         assertEquals(carId,result);
     }
+
+    @Test
+    void should_return_null_when_fetching_given_wrong_ticket() {
+        //given
+        String ticketId = "T002";
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.fetching(ticketId);
+
+        //then
+        assertEquals(null,result);
+    }
 }
