@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class ParkingBoy {
     //Set<String> parkLotSet = new HashSet<>();
-    private ParkLog parklot1;
-    private ParkLog parklot2;
+    protected ParkLog parklot1;
+    protected ParkLog parklot2;
 
     public ParkingBoy() {
         parklot1 = new ParkLog("P1");

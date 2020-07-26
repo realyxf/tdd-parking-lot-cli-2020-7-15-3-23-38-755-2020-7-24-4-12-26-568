@@ -10,11 +10,14 @@ public class SmartParkingBoyTest {
     @Test
     void should_return_more_capacity_lot_when_parking_given_car() {
         //given
-        String carId = "C001";
+        String carId1 = "C001";
+        String carId2 = "C002";
         SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
 
         //when
-        String result = smartParkingBoy.parking(carId).getParkLotId();
+        String result = smartParkingBoy.parking(carId1).getParkLotId();
+        result = smartParkingBoy.parking(carId2).getParkLotId();
+
 
         //then
         assertEquals("P2",result);
