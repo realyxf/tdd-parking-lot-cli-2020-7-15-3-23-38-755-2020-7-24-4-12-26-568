@@ -12,11 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ParkingBoyFacts {
-
+    ParkingBoy parkingBoy;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @BeforeEach
     void setUp() {
+        parkingBoy = new ParkingBoy();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -24,8 +25,6 @@ class ParkingBoyFacts {
     void should_return_ticket_when_parking_given_car() {
         //given
         String carId = "C001";
-
-        ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
         Ticket result = parkingBoy.parking(carId);
@@ -38,7 +37,6 @@ class ParkingBoyFacts {
     void should_return_car_when_fetching_given_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
 
         //when
@@ -52,7 +50,6 @@ class ParkingBoyFacts {
     void should_return_correct_car_when_fetching_given_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
 
         //when
@@ -66,7 +63,6 @@ class ParkingBoyFacts {
     void should_return_null_when_fetching_given_wrong_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
         Ticket wrongTicket = new Ticket("T123","C123", "P1",false);
         //when
@@ -80,7 +76,6 @@ class ParkingBoyFacts {
     void should_return_null_when_fetching_given_used_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
 
         //when
@@ -115,7 +110,6 @@ class ParkingBoyFacts {
         String carId19 = "C019";
         String carId20 = "C020";
         String carId21 = "C021";
-        ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
         Ticket result = parkingBoy.parking(carId1);
@@ -152,9 +146,9 @@ class ParkingBoyFacts {
     void should_return_unrecognized_parking_ticket_when_parking_given_wrong_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
         Ticket wrongTicket = new Ticket("T123","C123","P1",false);
+
         //when
         String result = parkingBoy.fetching(wrongTicket);
 
@@ -166,7 +160,7 @@ class ParkingBoyFacts {
     void should_return_please_provide_your_parking_ticket_when_fetching_given_null_ticket() {
         //given
         String carId = "C001";
-        ParkingBoy parkingBoy = new ParkingBoy();
+
         //when
         parkingBoy.fetching();
 
@@ -188,7 +182,6 @@ class ParkingBoyFacts {
         String carId9 = "C009";
         String carId10 = "C010";
         String carId11 = "C011";
-        ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
         parkingBoy.parking(carId1);
@@ -221,7 +214,6 @@ class ParkingBoyFacts {
         String carId9 = "C009";
         String carId10 = "C010";
         String carId11 = "C011";
-        ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
         String result = parkingBoy.parking(carId1).getParkLotId();
