@@ -6,10 +6,13 @@ import java.util.Set;
 public class ParkLog {
     Set<String> carIdSet = new HashSet<>();
     private String parkLotId;
-    private int capacity = 10;
+    private int capacity;
+    private int maxCapacity;
 
-    public ParkLog(String getParkLotId) {
-        this.parkLotId = getParkLotId;
+    public ParkLog(String parkLotId, int maxCapacity) {
+        this.parkLotId = parkLotId;
+        this.capacity = maxCapacity;
+        this.maxCapacity = maxCapacity;
     }
 
     public void addCarIdToLot(String carId) {
@@ -23,5 +26,9 @@ public class ParkLog {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
 }

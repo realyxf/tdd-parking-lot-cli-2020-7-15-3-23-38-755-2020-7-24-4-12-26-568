@@ -105,6 +105,16 @@ class ParkingBoyFacts {
         String carId9 = "C009";
         String carId10 = "C010";
         String carId11 = "C011";
+        String carId12 = "C012";
+        String carId13 = "C013";
+        String carId14 = "C014";
+        String carId15 = "C015";
+        String carId16 = "C016";
+        String carId17 = "C017";
+        String carId18 = "C018";
+        String carId19 = "C019";
+        String carId20 = "C020";
+        String carId21 = "C021";
         ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
@@ -119,6 +129,16 @@ class ParkingBoyFacts {
         result = parkingBoy.parking(carId9);
         result = parkingBoy.parking(carId10);
         result = parkingBoy.parking(carId11);
+        result = parkingBoy.parking(carId12);
+        result = parkingBoy.parking(carId13);
+        result = parkingBoy.parking(carId14);
+        result = parkingBoy.parking(carId15);
+        result = parkingBoy.parking(carId16);
+        result = parkingBoy.parking(carId17);
+        result = parkingBoy.parking(carId18);
+        result = parkingBoy.parking(carId19);
+        result = parkingBoy.parking(carId20);
+        result = parkingBoy.parking(carId21);
 
         //then
         assertEquals(null,result);

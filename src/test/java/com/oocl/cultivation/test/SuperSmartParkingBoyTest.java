@@ -12,12 +12,15 @@ public class SuperSmartParkingBoyTest {
         //given
         String carId1 = "C001";
         String carId2 = "C002";
+        String carId3 = "C003";
         SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
 
         //when
         String result = superSmartParkingBoy.parking(carId1).getParkLotId();
+        result = superSmartParkingBoy.parking(carId2).getParkLotId();
+        result = superSmartParkingBoy.parking(carId3).getParkLotId();
 
         //then
-        assertEquals("P1",result);
+        assertEquals("P3",result);
     }
 }
