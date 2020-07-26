@@ -68,7 +68,7 @@ class ParkingBoyFacts {
         String carId = "C001";
         ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
-        Ticket wrongTicket = new Ticket("T123","C123",false);
+        Ticket wrongTicket = new Ticket("T123","C123", "P1",false);
         //when
         String result = parkingBoy.fetching(wrongTicket);
 
@@ -134,7 +134,7 @@ class ParkingBoyFacts {
         String carId = "C001";
         ParkingBoy parkingBoy = new ParkingBoy();
         Ticket ticket = parkingBoy.parking(carId);
-        Ticket wrongTicket = new Ticket("T123","C123",false);
+        Ticket wrongTicket = new Ticket("T123","C123","P1",false);
         //when
         String result = parkingBoy.fetching(wrongTicket);
 
@@ -187,8 +187,37 @@ class ParkingBoyFacts {
         assertEquals("Not enough position.",systemOut());
     }
 
+    @Test
     void return_second_parklog_when_first_parkinglog_enough_given_more_than_capacity_car(){
+        //given
+        String carId1 = "C001";
+        String carId2 = "C002";
+        String carId3 = "C003";
+        String carId4 = "C004";
+        String carId5 = "C005";
+        String carId6 = "C006";
+        String carId7 = "C007";
+        String carId8 = "C008";
+        String carId9 = "C009";
+        String carId10 = "C010";
+        String carId11 = "C011";
+        ParkingBoy parkingBoy = new ParkingBoy();
 
+        //when
+        String result = parkingBoy.parking(carId1).getParkLotId();
+        result = parkingBoy.parking(carId2).getParkLotId();
+        result = parkingBoy.parking(carId3).getParkLotId();
+        result = parkingBoy.parking(carId4).getParkLotId();
+        result = parkingBoy.parking(carId5).getParkLotId();
+        result = parkingBoy.parking(carId6).getParkLotId();
+        result = parkingBoy.parking(carId7).getParkLotId();
+        result = parkingBoy.parking(carId8).getParkLotId();
+        result = parkingBoy.parking(carId9).getParkLotId();
+        result = parkingBoy.parking(carId10).getParkLotId();
+        result = parkingBoy.parking(carId11).getParkLotId();
+
+        //then
+        assertEquals("P2",result);
     }
 
 }
